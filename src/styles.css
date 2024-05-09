@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+  --valid-color : rgb(33, 255, 33);
+}

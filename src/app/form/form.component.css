@@ -1,0 +1,13 @@
+input.ng-valid {
+  border-color: var(--valid-color);
+  border-width: 2px;
+}
+
+input.ng-invalid.ng-touched {
+    border-color: var(--red-color);
+    border-width: 2px;
+}
+
+.ng-if{
+  color: var(--red-color);
+}

@@ -1,0 +1,43 @@
+
+
+<form  [formGroup]="form" (ngSubmit)="addUser()" class=" mt-5 m-auto" style="width: 700px;">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nom</label>
+    <input type="text" class="form-control" formControlName="nom" id="name">
+    <div *ngIf="form.get('nom')?.touched" class="ng-if">
+      <div *ngIf="form.get('nom')?.getError('required')">ce champ est obligatoire</div>
+      <div *ngIf="form.get('nom')?.getError('minlength')">vous devez entrer 5 chiffres</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Prénom</label>
+    <input type="text" class="form-control" id="name" formControlName="prénom">
+    <div  *ngIf="form.get('prénom')?.touched" class="ng-if">
+      <div *ngIf="form.get('prénom')?.getError('required')">ce champ est obligatoire</div>
+      <div *ngIf="form.get('prénom')?.getError('minlength')">vous devez entrer 5 chiffres</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" formControlName="email">
+    <div *ngIf="form.get('email')?.touched" class="ng-if">
+      <div *ngIf="form.get('email')?.getError('email')">doit entrez un email</div>
+      <div *ngIf="form.get('email')?.getError('required')">ce champ est obligatoire</div>
+      <div *ngIf="form.get('email')?.getError('checkEmail')">ce email est déja existe</div>
+    </div>
+  </div>
+
+
+
+  <div class="mb-3">
+    <label for="telephone" class="form-label">Telephone</label>
+    <input type="text" class="form-control" id="telephone" formControlName="telephone">
+    <div *ngIf="form.get('telephone')?.touched" class="ng-if">
+      <div *ngIf="form.get('telephone')?.getError('maxlength')">vous devez entrez 10 chiffres</div>
+    <div *ngIf="form.get('telephone')?.getError('minlength')">vous devez entrez 10 chiffres</div>
+    <div *ngIf="form.get('telephone')?.getError('phoneValidator')">ce numéro est déjà existe</div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Envoyer</button>
+</form>
